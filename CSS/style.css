@@ -118,8 +118,7 @@ header nav li:hover
 }
 
 /* header info */
-header .info {
-    flex-direction: column;
+header .info {  
   justify-content: center;
   text-align: center;
   height: var(--headerInfoHeight);
