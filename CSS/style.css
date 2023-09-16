@@ -1,7 +1,7 @@
 :root {
   --headerInfoHeight: 450px;
   --headerInfoHeadingMargin: 0.2em;
-  --headerInfoFlexPadding : 2em 4em;
+  --headerInfoFlexPadding: 2em 4em;
   --headerH1FontSize: 4em;
   --headerH2FontSize: 2em;
 }
@@ -13,13 +13,24 @@
 body {
   /* background-color: black;
     color: white; */
-    margin: 0;
+  margin: 0;
 }
 
 .flex {
   display: flex;
   justify-content: space-evenly;
 }
+
+.grid
+{
+    display: grid;
+    border: 2px solid green;
+}
+
+.overflowHidden {
+    overflow: hidden;
+  }
+  
 
 ul {
   padding: 0;
@@ -34,84 +45,81 @@ li {
   cursor: pointer;
 }
 
+a {
+  color: #d7dedc;
+  text-decoration: none;
+}
+
 /* header */
 header {
-    position: relative;
-    color: #D7DEDC;
-    padding-top: 20px;
+  position: relative;
+  color: #d7dedc;
+  padding-top: 20px;
 }
 
-header::before
-{
-    content: "";
-    background-color: rgba(0, 0, 0, 0.705);
-    background: url(../CSS/img/bg1.jpg) center center/cover no-repeat;
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    z-index: -2;
+header::before {
+  content: "";
+  background-color: rgba(0, 0, 0, 0.705);
+  background: url(../CSS/img/bg1.jpg) center center/cover no-repeat;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  z-index: -2;
 }
 
-header::after
-{
-    transform: translate(-500%);
-    content: "";
-    background-color: rgba(0, 0, 0, 0.705);
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    z-index: -2;
-    animation: getInFromTop 1s forwards ease-in, bounce 1s forwards ease 1s;
+header::after {
+  transform: translate(-500%);
+  content: "";
+  background-color: rgba(0, 0, 0, 0.705);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  z-index: -2;
+  animation: getInFromTop 1s forwards ease-in, bounce 1s forwards ease 1s;
 }
 
 header h1 {
-    font-size: var(--headerH1FontSize);
-    margin-left: 0;
-    margin-right: 0;
+  font-size: var(--headerH1FontSize);
+  margin-left: 0;
+  margin-right: 0;
 }
 
 @keyframes bounce {
-    75%
-    {
-        transform: translateY(-20px);
-    }
+  75% {
+    transform: translateY(-20px);
+  }
 
-    80%
-    {
-        transform: translateY(0);
-    }
-    
-    85%
-    {
-        transform: translateY(-10px);
-    }
-    
-    90%
-    {
-        transform: translateY(0px);
-    }
-    
-    95%
-    {
-        transform: translateY(-5px);
-    }
+  80% {
+    transform: translateY(0);
+  }
+
+  85% {
+    transform: translateY(-10px);
+  }
+
+  90% {
+    transform: translateY(0px);
+  }
+
+  95% {
+    transform: translateY(-5px);
+  }
 }
 
 header h2 {
   font-size: var(--headerH2FontSize);
 }
 
-header nav li:hover
-{
-    background-color: #D7DEDC;
-    color: rgba(0, 0, 0, 0.705);
-    color: black;
+header nav li:hover {
+  background-color: #d7dedc;
+  color: rgba(0, 0, 0, 0.705);
+  color: black;
 }
 
 /* header info */
-header .info {  
+header .info {
   justify-content: center;
   text-align: center;
   height: var(--headerInfoHeight);
@@ -123,116 +131,110 @@ h1 {
   margin: var(--headerInfoHeadingMargin);
 }
 
-header .info .flex
-{
-    position: relative;
-    flex-direction: column;
-    width: max-content;
-    padding: var(--headerInfoFlexPadding);
-    /* overflow: hidden; */
+header .info .flex {
+  position: relative;
+  flex-direction: column;
+  width: max-content;
+  padding: var(--headerInfoFlexPadding);
+  color: #efa00b;
 }
 
-header .info .flex::before
-{
-    background-color: #151a1975;
-    box-shadow: inset 0 0 20px 0 darkgrey;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    content: "";
-    z-index: -1;
-    border-radius: 10px;
-    position: absolute;
-    animation: bounce 2s forwards ease;
+header .info .flex::before {
+  background-color: #151a1975;
+  box-shadow: inset 0 0 20px 0 darkgrey;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  content: "";
+  z-index: -1;
+  border-radius: 10px;
+  position: absolute;
+  animation: bounce 2s forwards ease;
 }
 
 @keyframes flip {
-    from    
-    {
-        transform: rotateY(0deg);
-    }
-    
-    to    
-    {
-        transform: rotateY(180deg);
-    }
+  from {
+    transform: rotateY(0deg);
+  }
+
+  to {
+    transform: rotateY(180deg);
+  }
 }
 
-.overflowHidden
-{
-    overflow: hidden;
-}
-
-#hello
-{
-    transform: translateY(-500%);
-    animation: getInFromTop 2s forwards linear;
+#hello {
+  transform: translateY(-500%);
+  animation: getInFromTop 2s forwards linear;
 }
 
 @keyframes getInFromTop {
-    to
-    {
-        transform: translateY(0);
-    }
+  to {
+    transform: translateY(0);
+  }
 }
 
-#name
-{
-    /* border: 2px solid red; */
-    width: 100%;
-    transform: translateX(-500%);
-    overflow: hidden;
-    white-space: nowrap;
-    letter-spacing: 0.1em;
-    text-decoration: underline 2px;
-    animation: getInFromLeft 5s forwards linear 2s, typewriter 5s steps(30, end) 7s, blink 1s infinite forwards;
+#name {
+  /* border: 2px solid red; */
+  /* color: #D7DEDC; */
+  width: 100%;
+  transform: translateX(-200%);
+  overflow: hidden;
+  white-space: nowrap;
+  letter-spacing: 0.1em;
+  text-decoration: underline 2px;
+  animation: getInFromLeft 2s forwards linear 1s,
+    typewriter 3s steps(30, end) 2s, blink 1s infinite;
 }
 
 @keyframes getInFromLeft {
-    from
-    {
-        visibility: hidden;
-    }
-    to
-    {
-        transform: translateX(0);
-    }
+  to {
+    transform: translateX(0);
+  }
 }
 
 @keyframes typewriter {
-    from
-    {
-        width: 0;
-    }
-    to
-    {
-        width: 100%;
-    }
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
 }
 
 @keyframes blink {
-    from,to
-    {
-        visibility: visible;
-        border-right: 4px solid transparent;
-    }
-    
-    50%
-    {
-        border-right: 4px solid #D7DEDC;;
-    }
+  from,
+  to {
+    border-right: 4px solid transparent;
+  }
+
+  50% {
+    border-right: 4px solid #efa00b;
+  }
 }
 
-#msg
-{
-    transform: translateY(500%);
-    animation: getInFromBottom 2s forwards linear;
+#msg {
+  transform: translateY(500%);
+  animation: getInFromBottom 2s forwards linear;
 }
 
 @keyframes getInFromBottom {
-    to
-    {
-        transform: translateY(0);
-    }
+  to {
+    transform: translateY(0);
+  }
+}
+
+
+
+.container
+{
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 10px;
+}
+
+img
+{
+    width: 100%;
+    object-fit :fill;
+    aspect-ratio: 1;
 }
