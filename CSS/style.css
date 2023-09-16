@@ -37,8 +37,6 @@ li {
 /* header */
 header {
     position: relative;
-    color: #CEC6A7;
-    color: #CFCFCD;
     color: #D7DEDC;
     padding-top: 20px;
 }
@@ -53,11 +51,11 @@ header::before
     position: absolute;
     top: 0;
     z-index: -2;
-    animation: bounce 1s forwards ease;
 }
 
 header::after
 {
+    transform: translate(-500%);
     content: "";
     background-color: rgba(0, 0, 0, 0.705);
     width: 100%;
@@ -65,21 +63,16 @@ header::after
     position: absolute;
     top: 0;
     z-index: -2;
-    animation: bounce 1s forwards ease;
+    animation: getInFromTop 1s forwards ease-in, bounce 1s forwards ease 1s;
 }
 
 header h1 {
     font-size: var(--headerH1FontSize);
-    border: 2px solid red;
+    margin-left: 0;
+    margin-right: 0;
 }
 
 @keyframes bounce {
-    to 
-    {
-        transform: translateY(0);
-    }
-
-    
     75%
     {
         transform: translateY(-20px);
@@ -136,6 +129,7 @@ header .info .flex
     flex-direction: column;
     width: max-content;
     padding: var(--headerInfoFlexPadding);
+    /* overflow: hidden; */
 }
 
 header .info .flex::before
@@ -150,5 +144,95 @@ header .info .flex::before
     z-index: -1;
     border-radius: 10px;
     position: absolute;
-    animation: bounce 1s forwards ease 1s;
+    animation: bounce 2s forwards ease;
+}
+
+@keyframes flip {
+    from    
+    {
+        transform: rotateY(0deg);
+    }
+    
+    to    
+    {
+        transform: rotateY(180deg);
+    }
+}
+
+.overflowHidden
+{
+    overflow: hidden;
+}
+
+#hello
+{
+    transform: translateY(-500%);
+    animation: getInFromTop 2s forwards linear;
+}
+
+@keyframes getInFromTop {
+    to
+    {
+        transform: translateY(0);
+    }
+}
+
+#name
+{
+    /* border: 2px solid red; */
+    width: 100%;
+    transform: translateX(-500%);
+    overflow: hidden;
+    white-space: nowrap;
+    letter-spacing: 0.1em;
+    text-decoration: underline 2px;
+    animation: getInFromLeft 5s forwards linear 2s, typewriter 5s steps(30, end) 7s, blink 1s infinite forwards;
+}
+
+@keyframes getInFromLeft {
+    from
+    {
+        visibility: hidden;
+    }
+    to
+    {
+        transform: translateX(0);
+    }
+}
+
+@keyframes typewriter {
+    from
+    {
+        width: 0;
+    }
+    to
+    {
+        width: 100%;
+    }
+}
+
+@keyframes blink {
+    from,to
+    {
+        visibility: visible;
+        border-right: 4px solid transparent;
+    }
+    
+    50%
+    {
+        border-right: 4px solid #D7DEDC;;
+    }
+}
+
+#msg
+{
+    transform: translateY(500%);
+    animation: getInFromBottom 2s forwards linear;
+}
+
+@keyframes getInFromBottom {
+    to
+    {
+        transform: translateY(0);
+    }
 }
