@@ -1,9 +1,9 @@
 :root {
-  --headerInfoHeight: 450px;
-  --headerInfoHeadingMargin: 0.2em;
-  --headerInfoFlexPadding: 2em 4em;
   --headerH1FontSize: 4em;
   --headerH2FontSize: 2em;
+  --headerInfoFlexPadding: 2em 4em;
+  --headerInfoHeadingMargin: 0.2em;
+  --headerInfoHeight: 450px;
 }
 
 * {
@@ -21,16 +21,13 @@ body {
   justify-content: space-evenly;
 }
 
-.grid
-{
-    display: grid;
-    border: 2px solid green;
+.grid {
+  display: grid;
 }
 
 .overflowHidden {
-    overflow: hidden;
-  }
-  
+  overflow: hidden;
+}
 
 ul {
   padding: 0;
@@ -59,8 +56,7 @@ header {
 
 header::before {
   content: "";
-  background-color: rgba(0, 0, 0, 0.705);
-  background: url(../CSS/img/bg1.jpg) center center/cover no-repeat;
+  background: url(../CSS/img/poem\ bg.jpg) bottom center/cover no-repeat;
   width: 100%;
   height: 100%;
   position: absolute;
@@ -77,7 +73,7 @@ header::after {
   position: absolute;
   top: 0;
   z-index: -2;
-  animation: getInFromTop 1s forwards ease-in, bounce 1s forwards ease 1s;
+  animation: getInFromTop 1s forwards ease-in;
 }
 
 header h1 {
@@ -182,7 +178,7 @@ header .info .flex::before {
   overflow: hidden;
   white-space: nowrap;
   letter-spacing: 0.1em;
-  text-decoration: underline 2px;
+  text-decoration: underline 0.05em;
   animation: getInFromLeft 2s forwards linear 1s,
     typewriter 3s steps(30, end) 2s, blink 1s infinite;
 }
@@ -224,17 +220,62 @@ header .info .flex::before {
   }
 }
 
-
-
-.container
-{
-    grid-template-columns: repeat(5, 1fr);
-    grid-gap: 10px;
+/* container */
+.container {
+  padding: var(--headerInfoFlexPadding);
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  grid-gap: 20px;
+  justify-content: center;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.9);
+  overflow-y: scroll;
+  overflow-x: hidden;
+  position: relative;
 }
 
-img
+/* container card */
+.card {
+  /* border: 2px solid red; */
+  overflow: hidden;
+  border-radius: 1em;
+  position: relative;
+  cursor: pointer;
+  height: max-content;
+  box-shadow: 0 0 20px 0 black;
+}
+
+.overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  transition: all 1s;
+  background-color: #484649;
+  color: #E5D0CC;
+  padding: 1em;
+  align-items: center; 
+  font-size: 1.5em;
+}
+
+
+.overlay:hover {
+  /* transform: translateY(-300%); */
+  color: transparent;
+  background-color: transparent;
+}
+
+.card img {
+  width: 100%;
+  object-fit: fill;
+  aspect-ratio: 1;
+  transition: all 1s;
+}
+
+
+/* footer */
+footer
 {
-    width: 100%;
-    object-fit :fill;
-    aspect-ratio: 1;
+  background-color: black ;
 }
