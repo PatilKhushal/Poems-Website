@@ -235,13 +235,12 @@ header .info .flex::before {
 
 /* container card */
 .card {
-  /* border: 2px solid red; */
   overflow: hidden;
   border-radius: 1em;
   position: relative;
   cursor: pointer;
   height: max-content;
-  box-shadow: 0 0 20px 0 black;
+  /* box-shadow: 0 0 20px 0 black; */
 }
 
 .overlay {
@@ -271,6 +270,7 @@ header .info .flex::before {
   object-fit: fill;
   aspect-ratio: 1;
   transition: all 1s;
+  border-radius: 1em;
 }
 
 
