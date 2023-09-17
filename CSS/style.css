@@ -278,4 +278,12 @@ header .info .flex::before {
 footer
 {
   background-color: black ;
+  color: white;
+  flex-direction: column;
+}
+
+footer .copy
+{
+  justify-content: center;
+  align-items: baseline;
 }
